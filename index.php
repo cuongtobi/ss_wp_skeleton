@@ -25,23 +25,7 @@ get_header();
         ?>
     </ul>
 
-    <?php if ($total > 1) { ?>
-        <div class="pagination">
-            <?php
-                echo paginate_links(array(
-                    'base' => get_pagenum_link(1) . '%_%',
-                    'format' => 'page/%#%',
-                    'current' => $current,
-                    'total' => $total,
-                    'prev_text' => '«',
-                    'next_text' => '»',
-                ));
-            ?>                    
-        </div>
-    <?php
-        }
-        wp_reset_postdata();
-    ?>
+    <?php sswps_pagination($current, $total, 'pagination') ?>
 </section>
 
 <?php get_sidebar(); ?>
