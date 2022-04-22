@@ -9,3 +9,28 @@
 </head>
 
 <body>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="<?php bloginfo('wpurl') ?>" title="Super Simple Skeleton Theme for Wordpress">
+                    SS_WP_SKELETON
+                </a>
+            </li>
+            <?php
+                $categories = get_categories([
+                    'orderby' => 'name',
+                    'order'   => 'ASC',
+                ]);
+
+                foreach( $categories as $category ) {
+            ?>
+                <li>
+                    <a href="<?php echo get_category_link($category->term_id) ?>" title="<?php echo $category->name ?>">
+                        <?php echo $category->name ?>
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
+    </nav>
+</header>
