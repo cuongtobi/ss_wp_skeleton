@@ -1,2 +1,6 @@
-<?php
-// Sidebar template
+<aside>
+    <h3>Sidebar</h3>
+    <div>
+        Sidebar content.
+    </div>
+</aside>
