@@ -32,5 +32,9 @@
                 </li>
             <?php } ?>
         </ul>
+        <form action="<?php bloginfo('wpurl') ?>" method="get">
+            <input type="search" name="s">
+            <button type="submit">Search</button>
+        </form>
     </nav>
 </header>

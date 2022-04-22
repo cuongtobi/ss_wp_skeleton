@@ -24,6 +24,7 @@ get_header();
             }
         ?>
     </ul>
+
     <?php if ($total > 1) { ?>
         <div class="pagination">
             <?php
