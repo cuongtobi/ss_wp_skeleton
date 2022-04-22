@@ -1,0 +1,2 @@
+<?php
+// Search template
