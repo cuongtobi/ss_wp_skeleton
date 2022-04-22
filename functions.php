@@ -1,8 +1,10 @@
 <?php
 
+// Define constants
 define('SSWPS_VERSION', '1.0.0');
 define('SSWPS_POSTS_PER_PAGE', 10);
 
+// Theme setup
 if (!function_exists('theme_setup')) {
 	function theme_setup() {
 		add_theme_support('title-tag');
@@ -27,6 +29,7 @@ if (!function_exists('theme_setup')) {
 }	
 add_action('after_setup_theme', 'theme_setup');
 
+// Enqueue styles and scripts
 function theme_scripts() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), SSWPS_VERSION);
 	wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', array(), SSWPS_VERSION);
@@ -34,4 +37,8 @@ function theme_scripts() {
 }
 add_action('wp_enqueue_scripts', 'theme_scripts');
 
+// Disable new editor
 add_filter('use_block_editor_for_post', '__return_false');
+
+// Require helper functions
+require 'inc/helpers.php';
