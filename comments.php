@@ -4,7 +4,7 @@ if (post_password_required()) {
 }
 ?>
 
-<section>
+<section id="comments">
     <?php
         if (have_comments()) {
             $comment_count = get_comments_number();
